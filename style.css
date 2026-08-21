@@ -37,7 +37,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .navigation-toggle { display: none; }
 
 .hero-section { position: relative; min-height: 680px; overflow: hidden; background: var(--bgColor); color: white; }
-.hero-section_content { position: relative; z-index: 1; padding: 120px 0 90px; }
+.hero-section_content { position: relative; z-index: 1; padding: 70px 0 90px; }
 .eyebrow { margin: 0 0 18px; color: #ffffff; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
 .eyebrow--dark { color: var(--bgColor-dark); }
 h1, h2, h3 { margin: 0; font-family: var(--display-font); line-height: 1.05; }
