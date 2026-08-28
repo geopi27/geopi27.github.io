@@ -87,11 +87,33 @@ h1 span { color: #2c2928; }
 .discussion-theme-list li::before { position: absolute; top: 22px; left: 20px; color: var(--coral-dark); content: counter(discussion-theme, decimal-leading-zero); font-family: var(--display-font); font-size: 1.2rem; font-weight: 700; }
 .discussion-theme-list li:nth-child(odd) { border-right: 1px solid var(--line); }
 
-.speaker-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 20px; }
-.speaker-card { display: grid; grid-template-columns: 100px 1fr; gap: 18px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid #3a3937; }
-.speaker-card img { width: 100px; height: 100px; object-fit: cover;}
-.speaker-card h3 { font-size: 1.15rem; }
+.speaker-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+.speaker-card { display: flex; flex-direction: column; align-items: stretch; padding: 14px; border: 1px solid #454442; border-top: 4px solid var(--bgColor); background: linear-gradient(155deg, #292929, #1e1e1e); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18); transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+.speaker-card_avatar { display: grid; place-items: center; width: 100%; aspect-ratio: 1; margin: 0 0 16px; background: #353535; color: #a9a9a9; font-size: clamp(3.5rem, 6vw, 5.2rem); line-height: 1; }
+.speaker-card h3 { font-size: 1.05rem; }
 .speaker-card p { margin: 8px 0 0; color: #aaa7a2; font-size: 0.82rem; line-height: 1.35; }
+.speaker-card:hover { border-color: var(--bgColor); box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28); transform: translateY(-3px); transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+
+/* People: each group has a distinct visual treatment so visitors can scan roles quickly. */
+.people-section--organizers { border-top: 1px solid var(--line); }
+.organizer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.organizer-card { display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items: center; padding: 14px; border: 1px solid var(--line); border-top: 3px solid var(--bgColor); background: var(--paper-blue); }
+.organizer-card img { width: 72px; height: 72px; object-fit: cover; }
+.organizer-card h3 { font-size: 1rem; }
+.organizer-card p { margin: 5px 0 0; color: var(--muted); font-size: 0.75rem; line-height: 1.3; }
+.advisor-grid { display: flex; flex-wrap: wrap; align-items: stretch; justify-content: center; gap: 18px; }
+.advisor-card { padding: 24px 16px; border: 1px solid rgba(23, 23, 23, 0.12); background: rgba(255, 255, 255, 0.72); text-align: center; }
+.advisor-card { flex: 0 1 calc((100% - 72px) / 5); min-width: 0; }
+.advisor-card img { display: block; width: 112px; max-width: 100%; aspect-ratio: 1 / 1; height: auto; margin: 0 auto 18px; border-radius: 50%; object-fit: cover; filter: saturate(0.8); }
+.advisor-card h3 { font-size: 1.05rem; }
+.advisor-card p { min-height: 42px; margin: 8px 0 0; color: var(--muted); font-size: 0.75rem; line-height: 1.35; }
+.advisor-card .profile-card_role { color: var(--bgColor-dark); }
+
+.affiliation-section { border-top: 1px solid var(--line); }
+.affiliation-section_heading { margin-bottom: 42px; }
+.affiliation-logo-grid { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+.affiliation-logo-grid img { flex: 0 0 auto; width: auto; height: 34px; object-fit: contain; opacity: 1; transition: transform 0.2s ease; }
+.affiliation-logo-grid img:hover { transform: translateY(-3px); }
 
 .schedule-table-wrapper { overflow-x: auto; border-top: 3px solid var(--ink); }
 .schedule-table { width: 100%; border-collapse: collapse; min-width: 760px; }
@@ -149,6 +171,12 @@ h1 span { color: #2c2928; }
   .schedule-table td[colspan="2"] { grid-row: 1 / span 2; }
   .schedule-table small { font-size: 0.72rem; }
   .topic-grid, .speaker-grid, .award-grid { grid-template-columns: repeat(2, 1fr); }
+  .speaker-card { padding: 12px; }
+  .speaker-card_avatar { margin-bottom: 12px; }
+  .organizer-grid { grid-template-columns: repeat(2, 1fr); }
+  .advisor-card { flex-basis: calc((100% - 36px) / 3); }
+  .affiliation-logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 14px; justify-items: center; }
+  .affiliation-logo-grid img { height: 36px; max-width: 100%; }
   .topic-card:nth-child(2n) { border-right: 0; }
   .topic-card:nth-child(3) { padding-left: 0; }
   .award-card h3 { margin-top: 40px; }
@@ -158,6 +186,23 @@ h1 span { color: #2c2928; }
   h1 { font-size: clamp(3rem, 12.5vw, 5rem); }
   .hero-section_summary { font-size: 1rem; }
   .topic-grid, .speaker-grid, .award-grid { grid-template-columns: 1fr; }
+  .speaker-grid, .organizer-grid, .advisor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .speaker-card { padding: 9px; }
+  .speaker-card_avatar { margin-bottom: 9px; font-size: 3rem; }
+  .speaker-card h3 { font-size: 0.82rem; overflow-wrap: anywhere; }
+  .speaker-card p { margin-top: 5px; font-size: 0.68rem; overflow-wrap: anywhere; }
+  .organizer-card { display: flex; flex-direction: column; align-items: center; padding: 9px; text-align: center; }
+  .organizer-card img { width: 56px; height: 56px; }
+  .organizer-card h3 { font-size: 0.78rem; overflow-wrap: anywhere; }
+  .organizer-card p { font-size: 0.64rem; overflow-wrap: anywhere; }
+  .advisor-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .advisor-card { display: grid; grid-template-columns: 72px minmax(0, 1fr); grid-template-rows: auto auto; gap: 0 14px; align-items: start; flex: none; padding: 12px; text-align: left; }
+  .advisor-card img { grid-row: 1 / span 2; width: 72px; margin: 0; }
+  .advisor-card h3 { align-self: start; font-size: 0.95rem; margin-bottom: 0; margin-top: 15px; padding-bottom: 0;}
+  .advisor-card p { align-self: start; min-height: 0; margin: -1px 0 0; font-size: 0.72rem; line-height: 1.2; }
+  .affiliation-logo-grid { gap: 22px 18px; }
+  .affiliation-logo-grid img { height: 28px; }
+  .affiliation-logo-grid img:last-child:nth-child(3n + 1) { grid-column: 2; }
   .topic-card, .topic-card + .topic-card, .topic-card:nth-child(3) { padding: 24px 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .topic-card h3 { margin-top: 30px; }
   .discussion-theme-list { grid-template-columns: 1fr; }
