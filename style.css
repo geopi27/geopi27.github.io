@@ -112,7 +112,7 @@ h1 span { color: #2c2928; }
 .affiliation-section { border-top: 1px solid var(--line); }
 .affiliation-section_heading { margin-bottom: 42px; }
 .affiliation-logo-grid { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
-.affiliation-logo-grid img { flex: 0 0 auto; width: auto; height: 34px; object-fit: contain; opacity: 1; transition: transform 0.2s ease; }
+.affiliation-logo-grid img { flex: 0 0 auto; width: auto; height: 44px; object-fit: contain; opacity: 1; transition: transform 0.2s ease; }
 .affiliation-logo-grid img:hover { transform: translateY(-3px); }
 
 .schedule-table-wrapper { overflow-x: auto; border-top: 3px solid var(--ink); }
