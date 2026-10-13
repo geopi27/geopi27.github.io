@@ -60,7 +60,7 @@ h1 span { color: #2c2928; }
 .section { padding: 120px 0; }
 .section--light { background: var(--paper-blue); }
 .section--cream-blue { background: var(--cream-blue); }
-.section--dark { background: var(--ink); color: white; }
+.section--dark { background: var(--bgColor); color:  var(--ink); }
 .section--accent { background: var(--bgColor); color: white; }
 .section h2 { font-size: clamp(2.6rem, 5vw, 5rem); letter-spacing: -0.06em; }
 .about-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 100px; }
@@ -88,10 +88,10 @@ h1 span { color: #2c2928; }
 .discussion-theme-list li:nth-child(odd) { border-right: 1px solid var(--line); }
 
 .speaker-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
-.speaker-card { display: flex; flex-direction: column; align-items: stretch; padding: 14px; border: 1px solid #454442; border-top: 4px solid var(--bgColor); background: linear-gradient(155deg, #292929, #1e1e1e); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18); transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
-.speaker-card_avatar { display: grid; place-items: center; width: 100%; aspect-ratio: 1; margin: 0 0 16px; background: #353535; color: #a9a9a9; font-size: clamp(3.5rem, 6vw, 5.2rem); line-height: 1; }
+.speaker-card { display: flex; flex-direction: column; align-items: stretch; padding: 14px; border: 1px solid #E0E0E0; border-top: 4px solid var(--bgColor); background: linear-gradient(155deg, #F7F7F7, #E0E0E0); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18); transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+.speaker-card_avatar { display: grid; place-items: center; width: 100%; aspect-ratio: 1; margin: 0 0 16px; background: #F7F7F7; color: #a9a9a9; font-size: clamp(3.5rem, 6vw, 5.2rem); line-height: 1; }
 .speaker-card h3 { font-size: 1.05rem; }
-.speaker-card p { margin: 8px 0 0; color: #aaa7a2; font-size: 0.82rem; line-height: 1.35; }
+.speaker-card p { margin: 8px 0 0; color: #3C3C3C; font-size: 0.82rem; line-height: 1.35; }
 .speaker-card:hover { border-color: var(--bgColor); box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28); transform: translateY(-3px); transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
 
 /* People: each group has a distinct visual treatment so visitors can scan roles quickly. */
@@ -115,15 +115,18 @@ h1 span { color: #2c2928; }
 .affiliation-logo-grid img { flex: 0 0 auto; width: auto; height: 44px; object-fit: contain; opacity: 1; transition: transform 0.2s ease; }
 .affiliation-logo-grid img:hover { transform: translateY(-3px); }
 
+.tc-font { font-weight: 700; font-size: 1.35rem;  color: var(--bgColor-dark); font-family: var(--display-font); margin: 32px 0 14px;}
+
 .schedule-table-wrapper { overflow-x: auto; border-top: 3px solid var(--ink); }
 .schedule-table { width: 100%; border-collapse: collapse; min-width: 760px; }
 .schedule-table th, .schedule-table td { padding: 18px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-.schedule-table th { color: var(--bgColor-dark); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.schedule-table th { background: var(--bgColor); color: white; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
 .schedule-table td:first-child { width: 150px; font-family: var(--display-font); font-weight: 600; background: var(--paper-blue);}
 .schedule-table td:nth-child(2) { width: 280px; background: var(--cream-blue);}
 .schedule-table td:nth-child(3) { background: var(--cream-blue);}
 .schedule-table small { display: block; margin-top: 4px; color: var(--muted); font-size: 0.78rem; }
 .schedule-table_break td { background: var(--paper-blue) !important;}
+.schedule-table_session td { background: var(--bgColor) !important; color: white; }
 
 .award-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .award-card { min-height: 290px; padding: 28px; border: 1px solid rgba(255, 255, 255, 0.35); }
@@ -169,6 +172,8 @@ h1 span { color: #2c2928; }
   .schedule-table td:first-child { grid-row: 1 / span 2; }
   .schedule-table td:nth-child(2), .schedule-table td:nth-child(3), .schedule-table td[colspan="2"] { grid-column: 2; }
   .schedule-table td[colspan="2"] { grid-row: 1 / span 2; }
+  .schedule-table tr.schedule-table_session { display: block; }
+  .schedule-table tr.schedule-table_session td[colspan="3"] { grid-column: 1 / -1; width: 100% !important; padding: 14px 12px; }
   .schedule-table small { font-size: 0.72rem; }
   .topic-grid, .speaker-grid, .award-grid { grid-template-columns: repeat(2, 1fr); }
   .speaker-card { padding: 12px; }
@@ -200,6 +205,7 @@ h1 span { color: #2c2928; }
   .advisor-card img { grid-row: 1 / span 2; width: 72px; margin: 0; }
   .advisor-card h3 { align-self: start; font-size: 0.95rem; margin-bottom: 0; margin-top: 15px; padding-bottom: 0;}
   .advisor-card p { align-self: start; min-height: 0; margin: -1px 0 0; font-size: 0.72rem; line-height: 1.2; }
+  .tc-font { font-size: 1rem; line-height: 1.35; }
   .affiliation-logo-grid { gap: 22px 18px; }
   .affiliation-logo-grid img { height: 28px; }
   .affiliation-logo-grid img:last-child:nth-child(3n + 1) { grid-column: 2; }
