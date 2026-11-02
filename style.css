@@ -87,7 +87,7 @@ h1 span { color: #2c2928; }
 .discussion-theme-list li::before { position: absolute; top: 22px; left: 20px; color: var(--coral-dark); content: counter(discussion-theme, decimal-leading-zero); font-family: var(--display-font); font-size: 1.2rem; font-weight: 700; }
 .discussion-theme-list li:nth-child(odd) { border-right: 1px solid var(--line); }
 
-.speaker-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+.speaker-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 18px; }
 .speaker-card { display: flex; flex-direction: column; align-items: stretch;  text-align: center; padding: 14px; border: 1px solid #E0E0E0; border-top: 4px solid var(--bgColor); background: linear-gradient(155deg, #F7F7F7, #E0E0E0); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18); transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
 .speaker-card_avatar { display: grid; place-items: center; width: 100%; aspect-ratio: 1; margin: 0 0 16px; background: #F7F7F7; color: #a9a9a9; font-size: clamp(3.5rem, 6vw, 5.2rem); line-height: 1; }
 .speaker-card h3 { font-size: 1.05rem; }
@@ -175,7 +175,7 @@ h1 span { color: #2c2928; }
   .schedule-table tr.schedule-table_session { display: block; }
   .schedule-table tr.schedule-table_session td[colspan="3"] { grid-column: 1 / -1; width: 100% !important; padding: 14px 12px; }
   .schedule-table small { font-size: 0.72rem; }
-  .topic-grid, .speaker-grid, .award-grid { grid-template-columns: repeat(2, 1fr); }
+  .topic-grid, .speaker-grid, .award-grid { grid-template-columns: repeat(3, 1fr); }
   .speaker-card { padding: 12px; }
   .speaker-card_avatar { margin-bottom: 12px; }
   .organizer-grid { grid-template-columns: repeat(2, 1fr); }
